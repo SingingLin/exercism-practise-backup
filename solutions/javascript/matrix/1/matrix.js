@@ -1,0 +1,24 @@
+//
+// This is only a SKELETON file for the 'Matrix' exercise. It's been provided as a
+// convenience to get you started writing code faster.
+//
+
+export class Matrix {
+  constructor(matrixString) {
+    const lines = matrixString.split('\n');
+
+    this._rows = lines.map(line => 
+      line.split(' ').map(numStr => Number(numStr))
+    );
+  }
+
+  get rows() {
+    return this._rows;
+  }
+
+  get columns() {
+    return this._rows[0].map((_, columnIndex) => 
+      this._rows.map(row => row[columnIndex])
+    );
+  }
+}
